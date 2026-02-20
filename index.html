@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Work Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+  <div class="header">
+    <h1>Work Tracker</h1>
+
+    <div class="theme-switch">
+      <input type="checkbox" id="themeToggle" style="    display: none;">
+      <label for="themeToggle" class="switch-ui">
+        <span>🌞</span>
+        <span>🌙</span>
+        <span class="toggle-ball"></span>
+      </label>
+    </div>
+
+    <div class="controls">
+      <input type="text" id="taskInput" placeholder="Enter task...">
+      <select id="priority">
+        <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
+      </select>
+      <button id="addBtn">Add</button>
+      <input type="text" id="search" placeholder="Search...">
+
+        <div class="stat legend">
+    <span><b>Priority:</b></span>
+    <span class="p low">Low</span>
+    <span class="p medium">Medium</span>
+    <span class="p high">High</span>
+  </div>
+    </div>
+
+    
+    <div class="stats">
+      <div class="stat" id="total">Total: 0</div>
+      <div class="stat" id="pending">Pending: 0</div>
+      <div class="stat" id="done">Done: 0</div>
+      <div class="stat" id="todoPercent">To-Do: 0%</div>
+      <div class="stat" id="doingPercent">Doing: 0%</div>
+      <div class="stat" id="donePercent">Done: 0%</div>
+
+ 
+      
+    </div>
+
+    
+  </div>
+
+  <div class="board">
+    <div class="column" id="todo"><h2>To Do</h2></div>
+    <div class="column" id="doing"><h2>Doing</h2></div>
+    <div class="column" id="doneCol"><h2>Done</h2></div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,221 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Segoe UI";
+}
+
+/* ============ BACKGROUND ============ */
+body{
+  min-height:100vh;
+  background:
+    radial-gradient(circle at top left,#7c7cff,transparent 45%),
+    radial-gradient(circle at bottom right,#38bdf8,transparent 45%),
+    linear-gradient(135deg,#e0e7ff,#f0f9ff);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+  transition:.5s;
+}
+
+body.dark{
+  background:
+    radial-gradient(circle at top left,#312e81,transparent 45%),
+    radial-gradient(circle at bottom right,#0f172a,transparent 45%),
+    linear-gradient(135deg,#020617,#0f172a);
+  color:white;
+}
+
+/* ============ APP ============ */
+.app{
+  width:100%;
+  max-width:1000px;
+}
+
+/* ============ HEADER ============ */
+.header{
+  background:rgba(255,255,255,.6);
+  backdrop-filter:blur(25px);
+  padding:25px;
+  border-radius:20px;
+  box-shadow:0 20px 40px rgba(0,0,0,.15);
+  position:relative;
+}
+
+body.dark .header{
+  background:rgba(255,255,255,.08);
+}
+
+/* ============ CONTROLS ============ */
+.controls{
+  display:flex;
+  gap:12px;
+  margin-top:15px;
+  flex-wrap:wrap;
+  align-items:center;
+}
+
+/* Inputs, Select, Button — unified size */
+.controls input,
+.controls select,
+#addBtn{
+  height:42px;
+  padding:0 16px;
+  font-size:15px;
+  border-radius:12px;
+  border:none;
+}
+
+/* Dropdown spacing fix */
+.controls select{
+  padding-right:36px;
+  background:white;
+}
+
+/* Add Button */
+#addBtn{
+  background:linear-gradient(135deg,#6366f1,#38bdf8);
+  color:white;
+  cursor:pointer;
+}
+
+/* ============ STATS ============ */
+.stats{
+  display:flex;
+  gap:15px;
+  margin-top:15px;
+  flex-wrap:wrap;
+}
+
+.stat{
+  height:40px;
+  display:flex;
+  align-items:center;
+  padding:0 16px;
+  background:white;
+  border-radius:14px;
+  font-size:14px;
+}
+
+body.dark .stat{
+  background:rgba(255,255,255,.1);
+  color:white;
+}
+
+/* ============ PRIORITY LEGEND ============ */
+.legend{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:0 14px;
+  height:42px;
+  border-radius:14px;
+  background:white;
+  margin-top:12px;
+}
+
+body.dark .legend{
+  background:rgba(255,255,255,.1);
+}
+
+.legend .p{
+  padding:6px 14px;
+  font-size:14px;
+  border-radius:20px;
+  color:white;
+}
+
+.p.low{background:#22c55e;}
+.p.medium{background:#facc15;color:black;}
+.p.high{background:#ef4444;}
+
+/* ============ BOARD ============ */
+.board{
+  margin-top:25px;
+  display:flex;
+  gap:20px;
+}
+
+.column{
+  flex:1;
+  background:rgba(255,255,255,.6);
+  backdrop-filter:blur(20px);
+  border-radius:18px;
+  padding:15px;
+  min-height:350px;
+}
+
+body.dark .column{
+  background:rgba(255,255,255,.08);
+}
+
+/* ============ TASKS ============ */
+.task{
+  background:white;
+  padding:10px 12px;
+  margin-bottom:10px;
+  border-radius:12px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.task.low{border-left:5px solid #22c55e;}
+.task.medium{border-left:5px solid #facc15;}
+.task.high{border-left:5px solid #ef4444;}
+
+body.dark .task{
+  background:#020617;
+  color:white;
+}
+
+.dragging{
+  opacity:.5;
+  transform:scale(1.05);
+}
+
+/* Delete button */
+.actions button{
+  background:#ef4444;
+  border:none;
+  color:white;
+  padding:6px 10px;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+/* ============ DAY NIGHT TOGGLE ============ */
+.theme-switch{
+  position:absolute;
+  top:20px;
+  right:20px;
+}
+
+.switch-ui{
+  width:70px;
+  height:32px;
+  background:#93c5fd;
+  border-radius:30px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 10px;
+  cursor:pointer;
+  position:relative;
+}
+
+.toggle-ball{
+  position:absolute;
+  width:26px;
+  height:26px;
+  background:white;
+  border-radius:50%;
+  top:3px;
+  left:3px;
+  transition:.4s;
+}
+
+#themeToggle:checked + .switch-ui .toggle-ball{
+  transform:translateX(36px);
+}
